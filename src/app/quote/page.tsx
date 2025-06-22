@@ -94,8 +94,16 @@ export default function QuotePage() {
     ctx.fillStyle = "#ccc";
     ctx.fillText(`${theme} Quote`, width / 2, height - 30);
 
+    ctx.font = "8px sans-serif";
+    ctx.fillStyle = "#aaa";
+    ctx.fillText(
+      `Generated with ❤️ by Parichay Madnani`,
+      width / 2,
+      height - 10
+    );
+
     const link = document.createElement("a");
-    link.download = "quote.png";
+    link.download = `quote-${theme}.png`;
     link.href = canvas.toDataURL();
     link.click();
   }
@@ -240,6 +248,10 @@ export default function QuotePage() {
           </button>
         </div>
       )}
+
+      <footer className="w-full h-fit p-1 bg-yellow-100 text-yellow-700 absolute bottom-0 text-center text-sm">
+        <p>Made with ❤️ by Parichay Madnani</p>
+      </footer>
     </main>
   );
 }
